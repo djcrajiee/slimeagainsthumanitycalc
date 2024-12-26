@@ -1,138 +1,195 @@
 /* General Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  /* General Container Styling */
-  .container {
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    text-align: center;
-  }
-  
-  /* Playing Field Section */
-  #playingField {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: #e8ffe8; /* Light green background for distinction */
-    border-bottom: 2px solid #ccc; /* Add a border for separation */
-    min-height: 100px;
-  }
-  
-  #playingField .token {
-    margin: 5px; /* Spacing between tokens */
-  }
-  
-  /* Input Section Styling */
-  .tracker-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin: 20px auto;
-    max-width: 500px;
-  }
-  
-  .input-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 10px;
-  }
-  
-  .input-group label {
-    flex: 2; /* Adjust label width */
-    text-align: left; /* Left-align the labels */
-    font-size: 14px;
-  }
-  
-  .input-group input {
-    flex: 1; /* Adjust input width */
-    padding: 5px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center;
-    max-width: 80px; /* Ensure consistent size for inputs */
-  }
-  
-  /* Buttons */
-  .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-  }
-  
-  button {
-    padding: 8px 15px;
-    font-size: 14px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Generated Tokens Section */
-  #tokens {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-  }
-  
-  #tokens .token {
-    margin: 5px;
-  }
-  
-  /* Token Styling */
-.token {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+}
+
+/* General Container Styling */
+.container {
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Instructions Section */
+.instructions {
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff8e1;
+  border-left: 5px solid #ffc107;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  font-size: 16px;
+  color: #37474f;
+}
+
+.instructions h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #d32f2f;
+}
+
+.instructions p {
+  margin: 0;
+  text-align: left;
+}
+
+/* Playing Field Section */
+#playingField {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #e8ffe8;
+  min-height: 150px;
+}
+
+/* Playing Field Indicator */
+#playingFieldIndicator {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #37474f;
+}
+
+/* Generated Tokens Section */
+#tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  min-height: 150px;
+}
+
+/* Token Styling */
+.token-wrapper {
   width: 100px;
-  height: 140px;
-  background-image: url("ooze_token.jpg"); /* Background image for the token */
-  background-size: cover; /* Ensure the image covers the entire token */
-  background-position: center; /* Center the image */
-  border: 1px solid #333;
-  border-radius: 4px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
   position: relative;
-  color: white; /* Make text readable on darker backgrounds */
-  text-shadow: 1px 1px 2px black; /* Add shadow for better readability */
 }
 
-.token div:first-child {
-  font-size: 24px; /* Larger font size for power/toughness */
-  font-weight: bold; /* Bold text */
-  text-align: center; /* Center the text */
-  margin-bottom: 10px; /* Add some spacing from other elements */
+.token-wrapper .token {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.token button {
+.token-wrapper .token-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.token-wrapper .quantity-indicator {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Power and Toughness Styling */
+.token-wrapper .power-toughness {
   position: absolute;
   bottom: 5px;
-  left: 5px;
-  right: 5px;
-  font-size: 10px;
-  padding: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Remove Button Styling */
+.remove-btn {
+  margin-top: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: darkred;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(to right, #4caf50, #81c784);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(to right, #388e3c, #66bb6a);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Input Groups */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-size: 16px;
+  color: #37474f;
+}
+
+.input-group input {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  width: 120px;
 }
